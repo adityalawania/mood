@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOOD</title>
+    <link rel="html" href="mood2.html">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            
+ 
+        }
+        body{
+            background-color: rgb(0, 0, 0);
+        }
+        #header
+        {
+            height: 10px;
+            position: fixed;
+            top:0px;
+            left: 0px;
+            
+            
+        }
+        .nav-bar
+        {
+            display: flex;
+            background-color: black;
+            height:80px;
+            color:white;
+            align-items: center;
+        }
+        .nav
+        {                                                          
+            list-style:none;
+            margin: 0px 40px;
+        }
+        .nav:hover{
+            cursor: pointer;
+            color:rgb(212, 138, 0);
+            text-decoration:dotted
+            
+
+
+        }
+        .nav:enabled{
+            
+        }
+        .nav::backdrop{
+            /* box-shadow:0px 5px orange; */
+            text-decoration: underline;
+            text-decoration-color: red;
+        }
+     
+        img{
+            height: 40px;
+        }
+        .playing{
+            margin:10px 0px 0px 0px;
+            height:90px;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(0, 0, 0); 
+            align-items: center;
+         
+        }
+        .songs{
+            list-style: none;
+            margin:25px 3px;
+            padding: 10px;
+            
+        }
+        .list{
+            background-color: black;
+            color:white;
+            padding: 100px;
+            width: 50vw;
+            
+            
+        }
+        .songs:hover{
+            cursor:pointer;
+            
+        }
+
+
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        
+        #progressbar{
+            position: relative;
+            /* top: -650px; */
+            width: 30vw;
+            left: 3vw;
+            background-color: rgb(0, 0, 0);
+
+            
+            
+                   
+        }
+        .currentsong
+        {  
+            /*  margin-top: 50px;
+            padding: 0px; */
+             height: 484px;
+              width: 504px;
+              position: relative;
+              /* bottom: 700px; */
+              left:3vw; 
+            
+        }
+        .iconholder{
+            height: 60px;
+            width: 30vw;
+            background-color: rgb(255, 255, 255);
+            /* position: relative;
+            bottom: 650px;
+            left: 64vw; */
+            /* display: flex;
+            align-items: center; */
+            border-radius: 40px;
+            position: relative;
+            /* top:30vh; */
+            left:3vw
+        
+
+        }
+
+        #playbutton{
+               position: relative;
+               left: 128px;
+               top:10px;
+              opacity: 1;
+              
+        }
+        
+     
+        #pausebutton{
+            position: relative;
+            right:-50px;
+            top:10px;
+            opacity: 0;
+        }
+ 
+        #previousbutton{
+            position: relative;
+            left:5vw;
+            top:10px;
+        }
+        #nextbutton{
+            position: relative;
+            left:18vw;
+            top:9px;
+
+        }
+        #shufflebutton
+        {   
+            position: relative;
+            left:-66px;
+            top:5px;
+            width: 30px;
+            height: 30px;
+            
+        }
+        #side{
+            height:400px;
+        }
+        #covercontainer{
+            background-color: rgb(255, 0, 0);
+            width: 50vw;
+            height:80vh
+        }
+        #completed{
+            background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: 30px;
+    position: relative;
+    bottom: 22px;
+    left: 20px;
+        }
+        #total{
+            background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    position: relative;
+    left: 197px;
+    bottom: 20px;
+        }
+         #search{
+              position: relative;
+             
+             left:30vw; 
+             width: 27vw;
+             height: 50px;
+             border-radius: 6px;
+             font-size: 20px;
+         }
+         #covercontainer{
+             position:relative;
+             bottom:980px;
+             width: 50vw;
+             border:2px solid gold;
+             box-shadow: 5px 5px 5px solid green;
+
+             
+         }
+         #alltimeplay{
+             background-color: green;
+         }
+         #bottom{
+            background-color: rgb(0, 0, 0);
+            width: 35vw;
+          height: 70vh;
+     /* position: relative;
+    bottom: 222vh;
+    left: 48vw;  
+    position: -webkit-fixed;
+    bottom: 222vh; */
+    position: fixed;
+    top:130px;
+    left:63vw;
+    box-shadow: 5px 5px 10px orange;
+    
+  
+            
+         }
+      #trialbutton {
+                width: 70px;
+                height: 30px;
+       }
+        
+   
+
+    </style>
+</head>
+<body id="body">
+    <div id="header">
+        
+        <ul class="nav-bar">
+            <img src="https://i.pinimg.com/736x/47/60/74/4760742113cd984160a6be7bcf5ddf27.jpg" alt="">
+            <span class="name">MOOD</span>
+            <li class="nav" onclick="home()">Home</li>
+            <li class="nav"><a href="#">Recent</a></li>
+            <li  class="nav" onclick="album()">Albums</li>
+            <li class="nav">Account</li>
+            <!-- <button onclick="location.href=moodtry.html" id="trialbutton">TRY me</button> -->
+            <input id="search" type="search" placeholder="Seach Here" >
+        
+        
+        
+    </div> 
+    
+   
+    <div id="songlist" class="list">
+        <ol>
+            
+            <li id="0"  class="songs" onclick="start(0)"></li>
+            <li id="1"  class="songs" onclick="start(1)"></li>
+            <li id="2"  class="songs" onclick="start(2)"></li>
+            <li id="3"  class="songs" onclick="start(3)"></li>
+            <li id="4"  class="songs" onclick="start(4)"></li>
+            <li id="5"  class="songs" onclick="start(5)"></li>
+            <li id="6"  class="songs" onclick="start(6)"></li>
+            <li id="7"  class="songs" onclick="start(7)"></li>
+            <li id="8"  class="songs" onclick="start(8)"></li>
+            <li id="9"  class="songs" onclick="start(9)"></li>
+            <li id="10" class="songs" onclick="start(10)"></li>
+            <li id="11" class="songs" onclick="start(11)"></li>
+            <li id="12" class="songs" onclick="start(12)"></li>
+            <li id="13" class="songs" onclick="start(13)"></li>
+            <li id="14" class="songs" onclick="start(14)"></li>
+            <li id="15" class="songs" onclick="start(15)"></li>
+            <li id="16" class="songs" onclick="start(16)"></li>
+            <li id="17" class="songs" onclick="start(17)"></li>
+            <li id="18" class="songs" onclick="start(18)"></li>
+            <li id="19" class="songs" onclick="start(19)"></li>
+            <li id="20" class="songs" onclick="start(20)"></li>
+            <li id="21" class="songs" onclick="start(21)"></li>
+            <li id="22" class="songs" onclick="start(22)"></li>
+
+
+            
+            
+        </ol>
+    </div>
+
+    <!-- <div id="covercontainer">
+              hello
+        <input type="range" min="0" max="100" step="1.4.4"  value="0" id="progressbar">
+        </div>
+    </div> -->
+
+    <div id="bottom">
+
+        <div id="side" class="currentsong"></div> 
+         
+        <input type="range" min="0" max="100" step="1.4.4"  value="0" id="progressbar" class="progressbar">
+        <div id="iconholder" class="iconholder">
+            <span id="completed">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+            <img id="nextbutton" src="forward-step-solid.svg" onclick="next()" alt="">
+            <img id="previousbutton" src="backward-step-solid.svg" onclick="prev()" alt="">
+            <img id="playbutton" src="circle-play-solid.svg" onclick="paused()" >
+            <img id="shufflebutton" src="shuffle.png" alt="">
+            <img id="pausebutton" src="circle-pause-solid.svg" onclick="paused()" >
+            <span id="total">    </span>
+          
+
+
+
+
+
+        </div>
+
+
+  
+
+    </div>
+
+    
+
+
+ 
+ }
+
+
+
+    <script src="mood1.js">
+    
+       
+
+  
+    </script>
+</body>
+</html>

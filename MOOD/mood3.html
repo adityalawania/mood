@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <img id="mainimage" > 
+    <div id="mainname">AP DHILLON</div> -->
+    <ul id="myUL">
+        <li id="song1" ><span>ADITYA</span></li>
+        <li id="song2"><span>SHIKHA</span></li>
+        <li id="song3"><span>BHOOMIKA</span></li>
+        <li id="song4"><span>SHALINI</span></li>
+        <li id="song5"><span>SHAILENDRA</span></li>
+        <li id="song6"><span>HB</span></li>
+        <li id="song7"><span>234</span></li>
+        <li id="song8"><span>MAYA DEVI</span></li>
+        <li id="song9"><span>LAWANIAS</span></li>
+        <li id="song10"><span>FAMILY</span></li> 
+
+
+    </ul>
+    <input type="search" id="myInput" onkeyup="search()" placeholder="Search here">
+
+  <script>
+
+      let l=document.getElementById('myUL')
+      l.style.display='none'
+      
+
+      function search()
+      {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("li");
+        console.log(li)
+      l.style.display='block'
+
+        for (i = 0; i < li.length; i++) 
+        {
+          c=0
+        a = li[i].getElementsByTagName("span")[0];
+        console.log(a)
+        txtValue = a.textContent || a.innerText;
+          console.log(txtValue)
+        if (txtValue.toUpperCase().indexOf(filter) > -1)
+         {
+            li[i].style.display = "";
+        }
+        
+        else if(txtValue.toUpperCase().indexOf(filter) <= -1){
+            li[i].style.display = "none";
+        }
+    }   
+    for (i = 0; i < li.length; i++) 
+        {
+          if(li[i].style.display=="none")
+          {
+            c=c+1
+            console.log(c)
+          }
+        }
+
+        if(c==li.length)
+        {
+          console.log("OFDOOO")
+        }
+
+      }
+  </script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ 
+            /* margin-top: 80px; */
+            padding: 0px;
+            background-color: black;
+            color: white;
+        }
+        .albumcontainer{
+            display: flex;
+            
+        }
+        #allalbums
+        {
+            width:60vw
+        }
+        .list{
+            background-color: black;
+            color:white;
+            padding: 100px;
+            
+            
+        }
+        .nav-bar{
+            display: flex;
+            background-color: black;
+            height:80px;
+            color:white;
+            align-items: center;
+            margin-bottom: 60px;
+            
+        }
+        .nav{
+            list-style:none;
+            margin: 0px 40px;
+        }
+        .nav:hover{
+            cursor: pointer;
+            color:rgb(212, 138, 0);
+            text-decoration:dotted
+
+
+        }
+        #logo{
+            height: 40px;
+        }
+        
+        .album{
+            background-color:black;
+            color: white;
+            margin:30px;
+            width:27vw;
+            height: 60vh;
+            text-align: center;
+            /* border: 2px solid red; */
+            box-shadow: 4px 4px 10px orange;
+            
+           
+        }
+      
+        .artist{
+            position: relative;
+            top:15vh;
+            font-family: sans-serif;
+
+            font-size: 23px;
+        }
+        .artist:hover{
+            color: orange;
+            text-decoration: underline;
+        }
+        .name{
+            position: relative;
+            top: 2vh;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 25px;
+        }
+        .name:hover{
+            color: orange;
+        }
+        .playicon{
+            position: relative;
+            bottom:12vh;
+            left:12vw;
+            background-color: rgba(255, 0, 0, 0);
+            opacity:  0;
+        }
+        .cover{
+            width:30vw;
+             height:40vh;
+
+        
+        }
+        #backbutton
+        {
+            width: 70px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+     <ul class="nav-bar">
+            <img id="logo" src="https://i.ytimg.com/vi/RLhuPD2ASKE/maxresdefault.jpg" alt="">
+            <span class="name">MOOD</span>
+            <li class="nav" ><a href="mood1.html">Home</a></li>
+            <li class="nav">Recent</li>
+            <li class="nav">Playlist</li>
+            <li class="nav">Account</li>
+            <button onclick="back()" id="backbutton">GO BACK</button>
+
+
+        </ul>
+<div id="songlist">
+
+    <div class="albumcontainer">
+        <div id="album0" class="album">
+            <img id="cover0" class="cover" src="https://a10.gaanacdn.com/images/albums/4/4729504/crop_480x480_4729504.jpg" >
+            <div id="artist0"class="artist">Honey Singh</div>
+            <div id="name0" class="name">Raftar</div>
+            <img id="playicon0" class="playicon" onclick="clicked(0)"  src="play.png" width="70px" height="70px">
+        </div>
+        <div id="album1" class="album">
+            <img id="cover1" class="cover" src="https://i.ytimg.com/vi/g8LEktKv9hs/maxresdefault.jpg" >
+            <div id="artist1"class="artist">Mika Singh</div>
+            <div id="name1" class="name">Bulbul</div>
+            <img id="playicon1" class="playicon" onclick="clicked(1)"  src="play.png" width="70px" height="70px">
+
+        </div>
+ 
+    </div>
+    <div  class="albumcontainer">
+        <div id="album2" class="album">
+            <img id="cover2" class="cover" src="https://a10.gaanacdn.com/images/albums/4/4729504/crop_480x480_4729504.jpg" >
+            <div id="artist2"class="artist">Honey Singh</div>
+            <div id="name2" class="name">Raftar</div>
+            <img id="playicon2" class="playicon" onclick="clicked(2)" src="play.png" width="70px" height="70px">
+        </div>
+        <div id="album3" class="album">
+            <img id="cover3" class="cover" src="https://i.ytimg.com/vi/g8LEktKv9hs/maxresdefault.jpg" >
+            <div id="artist3"class="artist">Mika Singh</div>
+            <div id="name3" class="name">Bulbul</div>
+            <img id="playicon3" class="playicon" onclick="clicked(3)" src="play.png" width="70px" height="70px">
+
+        </div>
+  
+    </div>
+    <div class="albumcontainer">
+        <div id="album4" class="album">
+            <img id="cover4" class="cover" src="https://a10.gaanacdn.com/images/albums/4/4729504/crop_480x480_4729504.jpg" >
+            <div id="artist4"class="artist">Honey Singh</div>
+            <div id="name4" class="name">Raftar</div>
+            <img id="playicon4" class="playicon" onclick="clicked(4)" src="play.png" width="70px" height="70px">
+        </div>
+        <div id="album5" class="album">
+            <img id="cover5" class="cover" src="https://i.ytimg.com/vi/g8LEktKv9hs/maxresdefault.jpg" >
+            <div id="artist5"class="artist">Mika Singh</div>
+            <div id="name5" class="name">Bulbul</div>
+            <img id="playicon5" class="playicon" onclick="clicked(5)"  src="play.png" width="70px" height="70px">
+
+        </div>
+   
+    </div>
+    <div class="albumcontainer">
+        <div id="album6" class="album">
+            <img id="cover6" class="cover" src="https://a10.gaanacdn.com/images/albums/4/4729504/crop_480x480_4729504.jpg" >
+            <div id="artist6" class="artist">Honey Singh</div>
+            <div id="name6" class="name">Raftar</div>
+            <img id="playicon6" class="playicon" onclick="clicked(6)" src="play.png" width="70px" height="70px">
+        </div>
+        <div id="album7" class="album">
+            <img id="cover7" class="cover" src="https://i.ytimg.com/vi/g8LEktKv9hs/maxresdefault.jpg" >
+            <div id="artist7" class="artist">Mika Singh</div>
+            <div id="name7" class="name">Bulbul</div>
+            <img id="playicon7" class="playicon" onclick="clicked(7)" src="play.png" width="70px" height="70px">
+
+        </div>
+  
+    </div>
+</div>    
+
+    <script src="mood2.js"></script>
+</body>
+</html>
